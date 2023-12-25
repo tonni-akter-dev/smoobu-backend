@@ -4,7 +4,7 @@ const connectDB = require("./config/db");
 const PORT = process.env.PORT || 8000;
 
 // routes
-// const userRoutes = require("./modules/user/user.routes");
+const bookingRoutes = require("./modules/booking/bookingRoutes");
 
 const app = express();
 const http = require("http");
@@ -18,7 +18,7 @@ connectDB();
 
 // routes
 // app.use("/api/v1/users");
-
+app.use('/api', bookingRoutes);
 
 // testing api
 app.get("/", (req, res) => {
